@@ -1,0 +1,42 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        string numero = to_string(x);
+        int longitud = numero.length();
+        bool bandera = true;
+        
+        for(int i = 0, j = (longitud-1) ; i < longitud && j >=0 ; i++, j--) {
+            cout<< "analized " << " i: " << numero.at(i) << " j: " << numero.at(j) << "."<< endl;
+            if ( numero.at(i)!= numero.at(j)) {
+                bandera = false;
+            }
+        }
+        return bandera;
+    }
+};
+
+
+int main()
+{
+    cout<<"Welcome back to my return" << endl;
+    Solution solve;
+    int numeroPrueba;
+    
+    
+    cout << "Please type the number you want to compare: ";
+    cin >> numeroPrueba;
+    
+    
+    if(solve.isPalindrome(numeroPrueba)) {
+        cout<<"The number: "<< numeroPrueba << " is palindrome" << endl;
+    } else {
+        cout<< "The number: " << numeroPrueba << " is not a palindrome number" << endl; 
+    }
+    
+    
+    return 0;
+}
